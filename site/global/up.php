@@ -1,3 +1,13 @@
+<?php
+
+session_start();
+require_once("./global/pdo2.php");
+require_once("./global/config.php");
+require_once("./global/functions.php");
+require_once("./Model/userModel.php");
+require_once("./Model/boatsModel.php");
+
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,7 +16,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Boats Managment</title>
+    <title>Boats Management</title>
 
     <!-- Bootstrap core CSS -->
     <link href="./bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
@@ -33,17 +43,17 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Boats Managment</a>
+          <a class="navbar-brand" href="index.php">Boats Managment</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="" data-toggle="modal" data-target="#register">Register</a></li>
-            <li><a href="" data-toggle="modal" data-target="#login">Log in</a></li>
+            <?php
+            if (!empty($_SESSION['username']))
+            {
+              echo '<li><a href="logout.php">Logout</a></li>';
+            }
+            ?>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-
-    <!-- login modal -->
-    <?php include("login.php"); ?>
-    <?php include("register.php"); ?>

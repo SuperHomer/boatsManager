@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `boatsdb`.`Boats` (
   `name` VARCHAR(45) NOT NULL,
   `description` VARCHAR(255) NULL,
   `weight` FLOAT NOT NULL,
-  `createdDate` DATETIME NOT NULL,
+  `createdDate` DATE NOT NULL,
   `owner` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idBoats`))
 ENGINE = InnoDB

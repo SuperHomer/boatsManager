@@ -15,6 +15,5 @@ class PDO2 extends PDO{
 		}
 		return self::$_instance;
 	}
-	// End of PDO2::getInstance() */
 }
 ?>
